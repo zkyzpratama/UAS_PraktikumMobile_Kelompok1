@@ -23,4 +23,8 @@
     <img width="24%" src="images/HomeAllCategoriesScreenshot.png" />
     <img width="24%" src="images/HomeAllCategoriesDarkScreenshot.png" />
     <img width="24%" src="images/FullNewsScreenshot.png" />
+    <img width="24%" src="images/SplashLandscapeSS.png" />
+    <img width="24%" src="images/LandscapeLightHomeSS.png" />
+    <img width="24%" src="images/LandscapeHomeSS.png" />
+    <img width="24%" src="images/LandscapeNewsFullSS.png" />
 </p>
