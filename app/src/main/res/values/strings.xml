@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Newsify</string>
+    <string name="news_img_desc">News Image</string>
 </resources>
