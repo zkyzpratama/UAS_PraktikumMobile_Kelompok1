@@ -36,7 +36,6 @@
                 android:layout_marginEnd="6dp"
                 android:layout_marginBottom="8dp"
                 android:maxLines="3"
-                android:textColor="@color/primary"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:text="This is the title" />
@@ -45,7 +44,6 @@
                 android:id="@+id/article_source"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/primary"
                 android:textSize="12sp"
                 tools:text="Source"
                 android:layout_marginBottom="8dp" />
