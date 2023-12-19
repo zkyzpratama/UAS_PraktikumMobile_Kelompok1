@@ -14,7 +14,6 @@
 # Made by Kelompok 1 B
 - Muhammad Adlim Dzaky Pratama (F55122073)
 - Sophia Imawaty AR (F55122056)
-- Mochammad Fachri (F55122063)
 - Puti Andini (23236286)
 
 # Preview
