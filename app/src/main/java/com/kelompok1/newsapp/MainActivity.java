@@ -1,21 +1,28 @@
 package com.kelompok1.newsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.color.MaterialColors;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    ImageButton menuBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        menuBtn = findViewById(R.id.menu_btn);
 
         // Set initial fragment
         loadFragment(new AllCategoriesFragment());
@@ -28,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_5).setOnClickListener(this); // HEALTH
         findViewById(R.id.btn_6).setOnClickListener(this); // ENTERTAINMENT
         findViewById(R.id.btn_7).setOnClickListener(this); // SCIENCE
+
+        menuBtn.setOnClickListener((v -> showMenu()));
     }
 
     @Override
@@ -49,7 +58,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.btn_7) {
             loadFragment(new ScienceNewsFragment());
         }
-        // Add conditions for other buttons
+    }
+
+    private void showMenu(){
+        PopupMenu popupMenu  = new PopupMenu(MainActivity.this, menuBtn);
+        popupMenu.getMenu().add("Logout");
+        popupMenu.getMenu().add("History");
+        popupMenu.show();
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if(menuItem.getTitle() == "Logout"){
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    finish();
+                    return true;
+                } else if (menuItem.getTitle() == "History") {
+                    startActivity(new Intent(MainActivity.this, HistoryActivity.class));
+                    finish();
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
 
